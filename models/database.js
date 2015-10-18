@@ -6,10 +6,10 @@ var client = new pg.Client(connectionString);
 client.connect();
 
 // create a new table in the database leaders
-// var createQuery = client.query('CREATE TABLE women(id SERIAL PRIMARY KEY, name VARCHAR(30) not null, title VARCHAR(30), img TEXT)');
-// createQuery.on('end', function() {
-// 	client.end();
-// });
+var createQuery = client.query('CREATE TABLE women(id SERIAL PRIMARY KEY, name VARCHAR(30) not null, title VARCHAR(30), img bytea)');
+createQuery.on('end', function() {
+	client.end();
+});
 
 // reject duplicate name and title combinations
 var createQuery = client.query('CREATE unique index on women(name, title)');

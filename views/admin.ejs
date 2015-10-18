@@ -5,7 +5,7 @@
 	<header class="admin-form-header"> 
 		<h3>Use this form to input the data</h3>
 	</header>
-<form action='/admin/form' method='POST' class="form-horizontal admin-form">
+<form action='/admin/form' method='POST' class="form-horizontal admin-form" enctype="multipart/form-data">
 	<div class="form-group">
 		<label for="name" class="col-sm-1 control-label">Full Name:</label>
 		<div class="col-sm-4">
@@ -21,7 +21,7 @@
 	<div class="form-group">
 		<label for="img" class="col-sm-1 control-label">Image:</label>
 		<div class="col-sm-4">
-			<input type="file" name="img" accept="image/*" class="form-control">
+			<input type="file" name="picture" accept="image/*" class="form-control">
 		</div>
 	</div>
 
