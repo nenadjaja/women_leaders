@@ -1,0 +1,64 @@
+body {
+  padding: 12px;
+  font: 14px "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.admin-form-header {
+	padding: 24px;
+}
+
+.admin-form {
+	margin-left: 12px;
+}
+
+#main {
+	margin: 0 auto;
+	width: 80%;
+}
+
+header {
+	text-align: center;
+}
+
+header h1 {
+	margin-bottom: 0px;
+}
+
+header h2 {
+	margin-top: 12px;
+	font-style: italic;
+}
+
+.profile-img {
+	float: left;
+	margin-right: 12px;
+}
+
+#options .option {
+	text-decoration: none;
+	display: inline-block;
+	margin-bottom: 6px;
+	padding: 0 6px;
+	border-right: 1px solid #DDD;
+}
+
+#main .person {
+  padding: 12px;
+  border-bottom: 1px solid #AAAAAA;
+}
+
+.person:nth-child(odd) {
+	background-color: #E0CEED;
+}
+
+.person:nth-child(even) {
+	background-color: #ecebeb;
+}
+
+.clear-both {
+	clear: both;
+}

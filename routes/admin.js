@@ -8,14 +8,21 @@ router.get('/', function(req,res,next) {
 });
 
 router.post('/form', function(req,res,next){
-	var data = {name: req.body.name, title: req.body.title};
-	console.log(data);
+	console.log("MY DATA")
+	var data = {name: req.body.name, title: req.body.title, image: req.body.img};
+	console.log(req.files);
 	var results = [];
 
 	pg.connect(connectionString, function(err, client, done) {
 		// insert data
-		client.query("INSERT into women(name, title) values($1, $2)", [data.name, data.title]);
-	
+		client.query("INSERT into women(name, title) values($1, $2)", [data.name, data.title], function(err, result){
+			if (err) {
+				console.log("ERROR SILLY");
+				console.log(err);
+			}
+
+		});
+
 		// select data
 		var query = client.query("SELECT * FROM women");
 
