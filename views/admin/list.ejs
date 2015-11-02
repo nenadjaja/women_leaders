@@ -1,0 +1,34 @@
+<div>
+	<table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Title</th>
+          <th>Image</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+      	<% if (results) { %>
+      	<% console.log(results); %>
+	      	<% for(var i=0; i<results.length; i++) {%>
+	   				<tr>
+	   					<td><%= results[i].id %></td>
+	   					<td><%= results[i].name %></td>
+	   					<td><%= results[i].title %></td>
+	   					<td>
+	   						<% if (results[i].img.length) { %>
+	   						<img src="/admin/image/<%= results[i].id %>" alt="profile image" height="50"></td>
+	   						<% } else { %>
+	   						-
+	   						<% } %>
+	   						
+	   					<td><button type="button" class="btn btn-warning">Delete</button></td>
+	   				</tr>
+					<% } %>
+				<% } %>
+      </tbody>
+    </table>
+
+</div>

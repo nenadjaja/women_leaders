@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<%- include ../partials/head.ejs %>
+<body>
+	<header class="admin-form-header"> 
+		<h3>Delete the entry</h3>
+	</header>
+<form action='/admin/form' method='POST' class="form-horizontal admin-form" enctype="multipart/form-data">
+	<div class="form-group">
+		<label for="name" class="col-sm-1 control-label">Full Name:</label>
+		<div class="col-sm-4">
+			<input type="text" id="name" name="name" class="form-control"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="title" class="col-sm-1 control-label">Title:</label>
+		<div class="col-sm-4">
+			<input type="text" id="title" name="title" class="form-control"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="img" class="col-sm-1 control-label">Image:</label>
+		<div class="col-sm-4">
+			<input type="file" name="picture" accept="image/*" class="form-control">
+		</div>
+	</div>
+
+	<div class="form-group">
+    <div class="col-sm-offset-1 col-sm-10">
+      <input type="submit" class="btn btn-primary" value="Delete entry"/>
+    </div>
+  </div>
+	<div style="margin-top: 30px;">
+		<% if (results) { %>
+			<pre><%= results %></pre>
+		<% } %>
+	</div>
+
+</form>
+</body>

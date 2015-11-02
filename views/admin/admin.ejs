@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-	<%- include partials/head.ejs %>
+	<%- include ../partials/head.ejs %>
 <body>
 	<header class="admin-form-header"> 
 		<h3>Use this form to input the data</h3>
@@ -31,9 +31,7 @@
     </div>
   </div>
 	<div style="margin-top: 30px;">
-		<% if (results) { %>
-			<pre><%= results %></pre>
-		<% } %>
+		<%- include list.ejs %>
 	</div>
 
 </form>
