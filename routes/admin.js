@@ -119,7 +119,7 @@ router.get('/delete/:id', function(req, res, next) {
 
 		query.on('end', function() {
 			client.end();
-			return res.json(results);
+			res.redirect('/admin');
 		});
 
 		if (err) {
