@@ -11,7 +11,6 @@
       </thead>
       <tbody>
       	<% if (results) { %>
-      	<% console.log(results); %>
 	      	<% for(var i=0; i<results.length; i++) {%>
 	   				<tr>
 	   					<td><%= results[i].id %></td>
@@ -23,7 +22,6 @@
 	   						<% } else { %>
 	   						-
 	   						<% } %>
-	   						
 	   					<td><button type="button" class="btn btn-warning" data-js="delete-row" data-id="<%= results[i].id %>">Delete</button></td>
 	   				</tr>
 					<% } %>

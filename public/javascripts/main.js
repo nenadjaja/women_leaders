@@ -1,5 +1,16 @@
 $(function() {
 	$('[data-js=delete-row]').on('click', function(el) {
-		window.location = "/admin/delete/" + $(el.target).attr('data-id');
+		var id = $(el.target).attr('data-id');
+		$.ajax({
+			type: 'GET',
+			url: '/admin/delete/' + id,
+			success: function() {
+				console.log("ASFADF")
+			},
+			error: function() {
+				console.log("qewrqwer")
+			}
+
+		});
 	});
 });

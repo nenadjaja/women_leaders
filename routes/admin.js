@@ -92,7 +92,6 @@ router.get('/image/:id', function(req, res, next) {
 
 });
 
-
 // Delete route
 router.get('/delete/:id', function(req, res, next) {
 	var results = [];
@@ -106,7 +105,6 @@ router.get('/delete/:id', function(req, res, next) {
 				console.log("ERROR SILLY");
 				console.log(err);
 			}
-
 		});
 
 		// select data
@@ -119,7 +117,8 @@ router.get('/delete/:id', function(req, res, next) {
 
 		query.on('end', function() {
 			client.end();
-			res.redirect('/admin');
+			
+			// res.redirect('/admin');
 		});
 
 		if (err) {
