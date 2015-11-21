@@ -1,17 +1,13 @@
-$(function() {
-	$('[data-js=delete-row]').on('click', function(el) {
-		var id = $(el.target).attr('data-id');
-		$.ajax({
-			type: 'GET',
-			url: '/admin/delete/' + id,
-			success: function() {
-				console.log("ASFADF")
-			},
-			error: function() {
-				console.log("qewrqwer")
-			}
+var React = require('react');
+var ReactDOM = require('react-dom');
 
-		});
-	});
- console.log("TEST");
+$(function() {
+ 
+ var Hello = React.createClass({
+ 	render: function() {
+ 		return (<div>Hello world</div>);
+ 	}
+ });
+ ReactDOM.render(<Hello />, document.getElementById('react-test'));
 });
+

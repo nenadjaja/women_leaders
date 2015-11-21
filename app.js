@@ -9,7 +9,6 @@ var pg = require('pg');
 var routes = require('./routes/index');
 var admin = require('./routes/admin');
 
-
 // var users = require('./routes/users');
 
 var app = express();
@@ -65,4 +64,3 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
-app.listen(8000);

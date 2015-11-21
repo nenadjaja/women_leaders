@@ -14,7 +14,7 @@ function handleError(error) {
 // client javascript
 gulp.task('client_js', function() {
 	browserify('./public/javascripts/main.js')
-		.transform(babelify)
+		.transform(reactify)
 		.bundle()
 		.on('error', handleError)
 		.pipe(source('main.js'))
