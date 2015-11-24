@@ -30,7 +30,7 @@ gulp.task('styles', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch('./public/javascripts/*', ['client_js']);
+	gulp.watch('./public/javascripts/**/*', ['client_js']);
 	gulp.watch('./public/stylesheets/*', ['styles']);
 });
 
