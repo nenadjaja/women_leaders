@@ -5,9 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var pg = require('pg');
+var fs = require('fs');
 
-var routes = require('./routes/index');
+var index = require('./routes/index');
 var admin = require('./routes/admin');
+var data = require('./routes/data');
 
 // var users = require('./routes/users');
 
@@ -27,9 +29,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
 // routes
-app.use('/', routes);
+app.use('/', index);
 app.use('/admin', admin);
-// app.use('/users', users);
+
+app.get('/api/data', function(req, res) {
+  fs.readFile('models/data.json', function(err, data) {
+    if (err) {
+      console.log(err);
+      process.exit(1);
+    }
+    res.setHeader('Cache-Control', 'no-cache');
+    res.json(JSON.parse(data));
+  });
+});
+
 
 //catch 404 and forward to error handler
 app.use(function(req, res, next) {
