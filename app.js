@@ -31,18 +31,7 @@ app.use('/bower_components', express.static(__dirname + '/bower_components'));
 // routes
 app.use('/', index);
 app.use('/admin', admin);
-
-app.get('/api/data', function(req, res) {
-  fs.readFile('models/data.json', function(err, data) {
-    if (err) {
-      console.log(err);
-      process.exit(1);
-    }
-    res.setHeader('Cache-Control', 'no-cache');
-    res.json(JSON.parse(data));
-  });
-});
-
+app.use('/data', data);
 
 //catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -18,7 +18,7 @@ var PersonList = React.createClass({
   render: function() {
     var dataEntries = this.props.data.map(function(entry) {
       return (
-        <PersonItem name={entry.name} title={entry.title}></PersonItem>
+        <PersonItem name={entry.name} title={entry.title} key={entry.id}></PersonItem>
       );
     });
     return (
@@ -39,8 +39,6 @@ var PersonBox = React.createClass({
       dataType: 'json',
       cache: false,
       success: function(data) {
-        console.log("SUCCESSS")
-        console.log(data);
         this.setState({ data: data });
       }.bind(this),
       error: function(xhe, status, err) {
